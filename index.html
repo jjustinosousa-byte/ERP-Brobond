@@ -16,7 +16,7 @@
         }
 
         window.onclick = function(event) {
-            if (!event.target.closest('nav') && !event.target.closest('header')) {
+            if (!event.target.closest('nav') && !event.target.closest('header') && !event.target.closest('#user-menu-container')) {
                 document.querySelectorAll('.dropdown-menu').forEach(el => el.classList.add('hidden'));
             }
         }
@@ -30,80 +30,80 @@
 </head>
 <body class="bg-gray-100 font-sans antialiased">
 
-    <!-- Topbar Global com Menus Dropdown (Mapeamento Brobond) -->
-    <header class="bg-white border-b border-gray-200 h-14 flex items-center justify-between px-6 fixed top-0 left-0 right-0 z-50">
+    <!-- Topbar Global em Azul Médio -->
+    <header class="bg-blue-800 text-white border-b border-blue-900 h-14 flex items-center justify-between px-6 fixed top-0 left-0 right-0 z-50 shadow-sm">
         <div class="flex items-center space-x-6">
-            <span class="text-xl font-bold tracking-wider text-green-700 cursor-pointer" onclick="showScreen('screen-dashboard')">brobond</span>
+            <span class="text-xl font-bold tracking-wider text-white cursor-pointer" onclick="showScreen('screen-dashboard')">brobond</span>
             
-            <nav class="hidden md:flex space-x-2 text-sm font-medium text-gray-700 relative">
+            <nav class="hidden md:flex space-x-1 text-sm font-medium text-blue-100 relative">
                 
                 <!-- 1. Meu Negócio -->
                 <div class="relative">
-                    <button onclick="toggleDropdown(event, 'drop-meu-negocio')" class="px-3 py-2 rounded hover:bg-gray-50 flex items-center space-x-1">
-                        <span>Meu Negócio</span> <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                    <button onclick="toggleDropdown(event, 'drop-meu-negocio')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
+                        <span>Meu Negócio</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-meu-negocio" class="dropdown-menu hidden absolute left-0 mt-1 w-56 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50 text-xs">
+                    <div id="drop-meu-negocio" class="dropdown-menu hidden absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-xl py-2 z-50 text-xs text-gray-700">
                         <div class="px-3 py-1 font-bold text-gray-400 uppercase tracking-wider text-[10px]">Visão Geral</div>
-                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Painel de Operações</a>
-                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Indicadores de E-commerce</a>
+                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Painel de Operações</a>
+                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Indicadores de E-commerce</a>
                     </div>
                 </div>
 
                 <!-- 2. Cadastros -->
                 <div class="relative">
-                    <button onclick="toggleDropdown(event, 'drop-cadastros')" class="px-3 py-2 rounded hover:bg-gray-50 flex items-center space-x-1">
-                        <span>Cadastros</span> <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                    <button onclick="toggleDropdown(event, 'drop-cadastros')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
+                        <span>Cadastros</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-cadastros" class="dropdown-menu hidden absolute left-0 mt-1 w-96 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-50 text-xs grid grid-cols-2 gap-4">
+                    <div id="drop-cadastros" class="dropdown-menu hidden absolute left-0 mt-2 w-96 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700 grid grid-cols-2 gap-4">
                         <div>
                             <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Catálogo</div>
-                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 text-gray-700 hover:text-green-600">Produtos & Variações (WooCommerce)</a>
-                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 text-gray-700 hover:text-green-600">Clientes & Parceiros</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Produtos & Variações (WooCommerce)</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Clientes & Parceiros</a>
                         </div>
                         <div>
                             <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Tabelas</div>
-                            <a href="#" class="block py-1.5 text-gray-700 hover:text-green-600">Preços & Atacado</a>
-                            <a href="#" class="block py-1.5 text-gray-700 hover:text-green-600">Categorias de Vestuário</a>
+                            <a href="#" class="block py-1.5 hover:text-blue-600">Preços & Atacado</a>
+                            <a href="#" class="block py-1.5 hover:text-blue-600">Categorias de Vestuário</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. Vendas -->
                 <div class="relative">
-                    <button onclick="toggleDropdown(event, 'drop-vendas')" class="px-3 py-2 rounded hover:bg-gray-50 flex items-center space-x-1">
-                        <span>Vendas</span> <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                    <button onclick="toggleDropdown(event, 'drop-vendas')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
+                        <span>Vendas</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-vendas" class="dropdown-menu hidden absolute left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-50 text-xs">
+                    <div id="drop-vendas" class="dropdown-menu hidden absolute left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700">
                         <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Operacional Vendas</div>
-                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 text-gray-700 hover:text-green-600">Pedidos de Venda</a>
-                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 text-gray-700 hover:text-green-600">Notas Fiscais (SEFAZ)</a>
-                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 text-gray-700 hover:text-green-600">Integração Lojas Virtuais</a>
+                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600">Pedidos de Venda</a>
+                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600">Notas Fiscais (SEFAZ)</a>
+                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600">Integração Lojas Virtuais</a>
                     </div>
                 </div>
 
                 <!-- 4. Estoque -->
                 <div class="relative">
-                    <button onclick="toggleDropdown(event, 'drop-estoque')" class="px-3 py-2 rounded hover:bg-gray-50 flex items-center space-x-1">
-                        <span>Estoque</span> <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                    <button onclick="toggleDropdown(event, 'drop-estoque')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
+                        <span>Estoque</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-estoque" class="dropdown-menu hidden absolute left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-50 text-xs">
+                    <div id="drop-estoque" class="dropdown-menu hidden absolute left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700">
                         <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Controle de Materiais</div>
-                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 text-gray-700 hover:text-green-600">Saldos & Grades de Produtos</a>
-                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 text-gray-700 hover:text-green-600">Entrada via XML de Fornecedores</a>
-                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 text-gray-700 hover:text-green-600">Sincronização Multi-armazém</a>
+                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 hover:text-blue-600">Saldos & Grades de Produtos</a>
+                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 hover:text-blue-600">Entrada via XML de Fornecedores</a>
+                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 hover:text-blue-600">Sincronização Multi-armazém</a>
                     </div>
                 </div>
 
                 <!-- 5. Financeiro -->
                 <div class="relative">
-                    <button onclick="toggleDropdown(event, 'drop-financeiro')" class="px-3 py-2 rounded hover:bg-gray-50 flex items-center space-x-1">
-                        <span>Financeiro</span> <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                    <button onclick="toggleDropdown(event, 'drop-financeiro')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
+                        <span>Financeiro</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-financeiro" class="dropdown-menu hidden absolute left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-lg p-4 z-50 text-xs">
+                    <div id="drop-financeiro" class="dropdown-menu hidden absolute left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700">
                         <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Gestão Financeira</div>
-                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 text-gray-700 hover:text-green-600">Contas a Pagar / Receber</a>
-                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 text-gray-700 hover:text-green-600">Fluxo de Caixa</a>
-                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 text-gray-700 hover:text-green-600">Gateway Pix / Pagamentos</a>
+                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 hover:text-blue-600">Contas a Pagar / Receber</a>
+                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 hover:text-blue-600">Fluxo de Caixa</a>
+                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 hover:text-blue-600">Gateway Pix / Pagamentos</a>
                     </div>
                 </div>
 
@@ -112,13 +112,45 @@
 
         <div class="flex items-center space-x-4">
             <div class="relative hidden sm:block">
-                <input type="text" placeholder="Pesquisar no ERP..." class="bg-gray-100 text-sm rounded-md px-3 py-1.5 pl-8 focus:outline-none focus:ring-1 focus:ring-green-600 w-64">
-                <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-gray-400 text-xs"></i>
+                <input type="text" placeholder="Pesquisar..." class="bg-blue-900 text-white placeholder-blue-300 text-sm rounded-md px-3 py-1.5 pl-8 focus:outline-none focus:ring-1 focus:ring-blue-400 w-64 border border-blue-700">
+                <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-blue-300 text-xs"></i>
             </div>
-            <div class="flex items-center space-x-3 text-gray-600">
-                <i class="fa-regular fa-bell cursor-pointer hover:text-green-600"></i>
-                <i class="fa-solid fa-gear cursor-pointer hover:text-green-600" onclick="showScreen('screen-config')"></i>
-                <span class="font-bold text-xs bg-gray-200 px-2.5 py-1 rounded text-gray-700">BROBOND</span>
+            <div class="flex items-center space-x-3 text-blue-200">
+                <i class="fa-regular fa-bell cursor-pointer hover:text-white"></i>
+                <i class="fa-solid fa-gear cursor-pointer hover:text-white" onclick="showScreen('screen-config')"></i>
+                
+                <!-- Menu do Usuário (Conforme Imagem 2) -->
+                <div class="relative" id="user-menu-container">
+                    <button onclick="toggleDropdown(event, 'drop-user')" class="flex items-center space-x-2 bg-blue-700 hover:bg-blue-600 px-3 py-1.5 rounded-full text-xs font-semibold text-white transition">
+                        <span class="w-5 h-5 rounded-full bg-blue-900 flex items-center justify-center text-[10px]">B</span>
+                        <span>BROBOND</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-blue-300"></i>
+                    </button>
+                    
+                    <div id="drop-user" class="dropdown-menu hidden absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-2xl py-2 z-50 text-xs text-gray-700">
+                        <div class="px-4 py-2 border-b border-gray-100 font-bold text-gray-800 text-sm">BROBOND WEAR LTDA</div>
+                        <a href="#" onclick="showScreen('screen-config')" class="block px-4 py-2.5 hover:bg-gray-50 flex items-center space-x-2"><i class="fa-solid fa-user-tie text-gray-400 w-4"></i><span>Dados da empresa</span></a>
+                        <a href="#" onclick="showScreen('screen-config')" class="block px-4 py-2.5 hover:bg-gray-50 flex items-center space-x-2"><i class="fa-solid fa-gear text-gray-400 w-4"></i><span>Todas as configurações</span></a>
+                        <a href="#" class="block px-4 py-2.5 hover:bg-gray-50 flex items-center space-x-2"><i class="fa-solid fa-clock-rotate-left text-gray-400 w-4"></i><span>Consultar gestão de ações</span></a>
+                        
+                        <div class="mx-4 my-2 p-2 bg-gray-50 border border-gray-200 rounded flex items-center justify-between">
+                            <div>
+                                <span class="font-bold text-gray-800 block">Plano Níquel</span>
+                            </div>
+                            <button class="border border-gray-300 bg-white px-2.5 py-1 rounded text-gray-600 hover:bg-gray-100 text-[10px]">Gerenciar plano</button>
+                        </div>
+
+                        <div class="px-4 py-2.5 border-t border-gray-100 flex items-center justify-between">
+                            <span class="text-gray-600">Tema escuro</span>
+                            <input type="checkbox" class="toggle cursor-pointer">
+                        </div>
+                        
+                        <div class="border-t border-gray-100 pt-1">
+                            <a href="#" class="block px-4 py-2.5 text-red-600 hover:bg-red-50 flex items-center space-x-2"><i class="fa-solid fa-right-from-bracket w-4"></i><span>Sair da conta</span></a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </header>
@@ -126,50 +158,50 @@
     <!-- Main Shell -->
     <div class="flex pt-14 min-h-screen">
         
-        <!-- Sidebar Esquerda -->
-        <aside class="w-72 bg-white border-r border-gray-200 p-4 hidden lg:block space-y-6 fixed h-[calc(100vh-3.5rem)] overflow-y-auto">
-            <div class="flex items-center space-x-3 p-2 bg-gray-50 rounded-lg">
-                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-700 font-bold">
+        <!-- Sidebar Esquerda em Azul Claro Harmonioso -->
+        <aside class="w-72 bg-blue-50 border-r border-blue-100 p-4 hidden lg:block space-y-6 fixed h-[calc(100vh-3.5rem)] overflow-y-auto">
+            <div class="flex items-center space-x-3 p-2 bg-blue-100/70 rounded-lg">
+                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold shadow-sm">
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <div class="overflow-hidden">
-                    <p class="text-sm font-semibold text-gray-800 truncate">BROBOND WEAR</p>
-                    <p class="text-xs text-gray-500 truncate">atendimento@brobond.com.br</p>
+                    <p class="text-sm font-semibold text-blue-900 truncate">BROBOND WEAR</p>
+                    <p class="text-xs text-blue-600 truncate">atendimento@brobond.com.br</p>
                 </div>
             </div>
 
-            <div class="border border-gray-200 p-3 rounded-lg space-y-2 text-xs">
-                <p class="font-medium text-gray-700">Sincronização de Lojas (WooCommerce)</p>
+            <div class="border border-blue-200 bg-white p-3 rounded-lg space-y-2 text-xs shadow-xs">
+                <p class="font-medium text-blue-900">Sincronização de Lojas (WooCommerce)</p>
                 <div class="flex justify-between items-center">
                     <span class="text-gray-500">Status: Conectado</span>
-                    <button class="border border-gray-300 px-2.5 py-1 rounded text-gray-600 hover:bg-gray-50">Sincronizar</button>
+                    <button class="border border-blue-300 bg-blue-50 px-2.5 py-1 rounded text-blue-700 hover:bg-blue-100 transition">Sincronizar</button>
                 </div>
             </div>
 
             <div class="space-y-1">
                 <div class="flex justify-between items-center px-1 mb-2">
-                    <span class="text-xs font-bold text-gray-500 uppercase tracking-wider">Atalhos Brobond</span>
+                    <span class="text-xs font-bold text-blue-800 uppercase tracking-wider">Atalhos Brobond</span>
                 </div>
-                <button onclick="showScreen('screen-vendas')" class="w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 rounded">Pedidos de Venda</button>
-                <button onclick="showScreen('screen-vendas')" class="w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 rounded">Notas Fiscais</button>
-                <button onclick="showScreen('screen-cadastros')" class="w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 rounded">Catálogo de Produtos</button>
-                <button onclick="showScreen('screen-estoque')" class="w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 rounded">Saldos de Estoque</button>
-                <button onclick="showScreen('screen-financeiro')" class="w-full text-left px-3 py-2 text-xs text-gray-700 hover:bg-gray-100 rounded">Fluxo de Caixa</button>
+                <button onclick="showScreen('screen-vendas')" class="w-full text-left px-3 py-2 text-xs text-blue-900 hover:bg-blue-100/60 rounded transition">Pedidos de Venda</button>
+                <button onclick="showScreen('screen-vendas')" class="w-full text-left px-3 py-2 text-xs text-blue-900 hover:bg-blue-100/60 rounded transition">Notas Fiscais</button>
+                <button onclick="showScreen('screen-cadastros')" class="w-full text-left px-3 py-2 text-xs text-blue-900 hover:bg-blue-100/60 rounded transition">Catálogo de Produtos</button>
+                <button onclick="showScreen('screen-estoque')" class="w-full text-left px-3 py-2 text-xs text-blue-900 hover:bg-blue-100/60 rounded transition">Saldos de Estoque</button>
+                <button onclick="showScreen('screen-financeiro')" class="w-full text-left px-3 py-2 text-xs text-blue-900 hover:bg-blue-100/60 rounded transition">Fluxo de Caixa</button>
             </div>
         </aside>
 
         <!-- Container de Telas (Workspace) -->
-        <main class="flex-1 lg:pl-72 p-6 space-y-6">
+        <main class="flex-1 lg:pl-72 p-6 space-y-6 bg-gray-50">
 
             <!-- TELA 1: DASHBOARD / MEU NEGÓCIO -->
             <div id="screen-dashboard" class="app-screen space-y-6">
-                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4">
+                <div class="bg-white border border-gray-200 rounded-xl p-6 space-y-4 shadow-sm">
                     <h2 class="text-lg font-bold text-gray-800">ERP Brobond - Painel de Controle Operacional</h2>
                     <p class="text-xs text-gray-500">Arquitetura multi-tenant orientada a dados próprios para gestão da marca Brobond Wear.</p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                         <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 space-y-1">
                             <span class="text-xs text-gray-500 font-semibold uppercase">Plataforma</span>
-                            <p class="text-sm font-bold text-green-700">ERP Brobond (Core Próprio)</p>
+                            <p class="text-sm font-bold text-blue-800">ERP Brobond (Core Próprio)</p>
                         </div>
                         <div class="border border-gray-200 p-4 rounded-lg bg-gray-50 space-y-1">
                             <span class="text-xs text-gray-500 font-semibold uppercase">Banco de Dados</span>
@@ -185,7 +217,7 @@
 
             <!-- TELA 2: CADASTROS -->
             <div id="screen-cadastros" class="app-screen hidden space-y-6">
-                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4 shadow-sm">
                     <h2 class="text-lg font-bold text-gray-800">Cadastros e Variações de Produtos</h2>
                     <p class="text-xs text-gray-500">Gerenciamento de SKUs, grades de vestuário e sincronização com WooCommerce.</p>
                 </div>
@@ -193,7 +225,7 @@
 
             <!-- TELA 3: VENDAS -->
             <div id="screen-vendas" class="app-screen hidden space-y-6">
-                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4 shadow-sm">
                     <h2 class="text-lg font-bold text-gray-800">Módulo de Vendas e Emissão Fiscal</h2>
                     <p class="text-xs text-gray-500">Controle de pedidos de e-commerce e transmissão via motor SEFAZ.</p>
                 </div>
@@ -201,7 +233,7 @@
 
             <!-- TELA 4: ESTOQUE -->
             <div id="screen-estoque" class="app-screen hidden space-y-6">
-                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4 shadow-sm">
                     <h2 class="text-lg font-bold text-gray-800">Controle de Estoque e Suprimentos</h2>
                     <p class="text-xs text-gray-500">Saldos de produtos, entradas por XML e conferência de armazém.</p>
                 </div>
@@ -209,17 +241,59 @@
 
             <!-- TELA 5: FINANCEIRO -->
             <div id="screen-financeiro" class="app-screen hidden space-y-6">
-                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4 shadow-sm">
                     <h2 class="text-lg font-bold text-gray-800">Módulo Financeiro e Tesouraria</h2>
                     <p class="text-xs text-gray-500">Contas a pagar, contas a receber e conciliação bancária.</p>
                 </div>
             </div>
 
-            <!-- TELA 6: CONFIGURAÇÕES -->
-            <div id="screen-config" class="app-screen hidden space-y-6">
-                <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4">
-                    <h2 class="text-lg font-bold text-gray-800">Configurações do Sistema</h2>
-                    <p class="text-xs text-gray-500">Parâmetros de multi-tenant, chaves de API e certificados digitais.</p>
+            <!-- TELA 6: CONFIGURAÇÕES / PREFERÊNCIAS (Com Menu Lateral Completo da Imagem 1) -->
+            <div id="screen-config" class="app-screen hidden space-y-4">
+                <div class="text-xs text-gray-500 flex items-center space-x-1">
+                    <span class="cursor-pointer hover:underline" onclick="showScreen('screen-dashboard')">Home</span>
+                    <i class="fa-solid fa-chevron-right text-[9px]"></i>
+                    <span class="text-gray-800 font-semibold">Preferências</span>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-4 flex items-center justify-between shadow-xs">
+                    <span class="text-sm font-semibold text-gray-800">Escolha uma das opções abaixo</span>
+                    <div class="relative w-72">
+                        <input type="text" placeholder="Pesquise aqui..." class="bg-white border border-green-500 text-sm rounded px-3 py-1.5 pl-3 pr-8 focus:outline-none w-full text-xs">
+                        <i class="fa-solid fa-magnifying-glass absolute right-2.5 top-2.5 text-green-600 text-xs"></i>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                    <!-- Menu Lateral de Configurações (Baseado na Imagem 1) -->
+                    <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-xs h-fit text-xs divide-y divide-gray-100">
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-building text-green-600 w-4"></i><span>Empresa</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-desktop text-gray-500 w-4"></i><span>Sistema</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-address-book text-gray-500 w-4"></i><span>Cadastros</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-box text-gray-500 w-4"></i><span>Suprimentos</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-tag text-gray-500 w-4"></i><span>Vendas</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-file-invoice text-gray-500 w-4"></i><span>Notas Fiscais</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-lock text-gray-500 w-4"></i><span>Certificado Digital</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-wallet text-gray-500 w-4"></i><span>Finanças</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-screwdriver-wrench text-gray-500 w-4"></i><span>Serviços</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-network-wired text-gray-500 w-4"></i><span>Integrações</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-truck text-gray-500 w-4"></i><span>Logística</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-calculator text-gray-500 w-4"></i><span>Contabilidade</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-file-arrow-down text-gray-500 w-4"></i><span>Importações de Dados</span></a>
+                        <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-database text-gray-500 w-4"></i><span>Backup e Exportação de Dados</span></a>
+                    </div>
+
+                    <!-- Conteúdo Principal de Preferências -->
+                    <div class="lg:col-span-3 space-y-4">
+                        <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4 shadow-xs text-xs">
+                            <div class="text-gray-400 font-bold uppercase tracking-wider text-[10px]">Configurações da empresa</div>
+                            <a href="#" class="block text-green-600 font-semibold hover:underline">&gt; Geral</a>
+                            
+                            <hr class="border-gray-100 my-2">
+                            
+                            <div class="text-gray-400 font-bold uppercase tracking-wider text-[10px]">Tabelas e configurações adicionais</div>
+                            <a href="#" class="block text-green-600 font-semibold hover:underline">&gt; Alterar dados da empresa</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
