@@ -42,14 +42,14 @@
                     <button onclick="toggleDropdown(event, 'drop-meu-negocio')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
                         <span>Meu Negócio</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-meu-negocio" class="dropdown-menu hidden absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-lg shadow-xl py-2 z-50 text-xs text-gray-700">
-                        <div class="px-3 py-1 font-bold text-gray-400 uppercase tracking-wider text-[10px]">Visão Geral</div>
+                    <div id="drop-meu-negocio" class="dropdown-menu hidden absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl py-2 z-50 text-xs text-gray-700">
+                        <div class="px-4 py-1 font-bold text-gray-400 uppercase tracking-wider text-[10px]">Visão Geral</div>
                         <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Painel de Operações</a>
                         <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Indicadores de E-commerce</a>
                     </div>
                 </div>
 
-                <!-- 2. Cadastros -->
+                <!-- 2. Cadastros (Mapeamento Oficial Brobond) -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-cadastros')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
                         <span>Cadastros</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
 
-                <!-- 3. Vendas -->
+                <!-- 3. Vendas (Mapeamento Oficial Brobond) -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-vendas')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
                         <span>Vendas</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Estoque -->
+                <!-- 4. Estoque (Mapeamento Oficial Brobond) -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-estoque')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
                         <span>Estoque</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
 
-                <!-- 5. Financeiro -->
+                <!-- 5. Financeiro (Mapeamento Oficial Brobond) -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-financeiro')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
                         <span>Financeiro</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
@@ -119,7 +119,7 @@
                 <i class="fa-regular fa-bell cursor-pointer hover:text-white"></i>
                 <i class="fa-solid fa-gear cursor-pointer hover:text-white" onclick="showScreen('screen-config')"></i>
                 
-                <!-- Menu do Usuário (Conforme Imagem 2) -->
+                <!-- Menu do Usuário -->
                 <div class="relative" id="user-menu-container">
                     <button onclick="toggleDropdown(event, 'drop-user')" class="flex items-center space-x-2 bg-blue-700 hover:bg-blue-600 px-3 py-1.5 rounded-full text-xs font-semibold text-white transition">
                         <span class="w-5 h-5 rounded-full bg-blue-900 flex items-center justify-center text-[10px]">B</span>
@@ -247,7 +247,7 @@
                 </div>
             </div>
 
-            <!-- TELA 6: CONFIGURAÇÕES / PREFERÊNCIAS (Com Menu Lateral Completo da Imagem 1) -->
+            <!-- TELA 6: CONFIGURAÇÕES / PREFERÊNCIAS -->
             <div id="screen-config" class="app-screen hidden space-y-4">
                 <div class="text-xs text-gray-500 flex items-center space-x-1">
                     <span class="cursor-pointer hover:underline" onclick="showScreen('screen-dashboard')">Home</span>
@@ -264,7 +264,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                    <!-- Menu Lateral de Configurações (Baseado na Imagem 1) -->
                     <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-xs h-fit text-xs divide-y divide-gray-100">
                         <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-building text-green-600 w-4"></i><span>Empresa</span></a>
                         <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-desktop text-gray-500 w-4"></i><span>Sistema</span></a>
@@ -282,14 +281,11 @@
                         <a href="#" class="flex items-center space-x-3 px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium"><i class="fa-solid fa-database text-gray-500 w-4"></i><span>Backup e Exportação de Dados</span></a>
                     </div>
 
-                    <!-- Conteúdo Principal de Preferências -->
                     <div class="lg:col-span-3 space-y-4">
                         <div class="bg-white border border-gray-200 rounded-lg p-6 space-y-4 shadow-xs text-xs">
                             <div class="text-gray-400 font-bold uppercase tracking-wider text-[10px]">Configurações da empresa</div>
                             <a href="#" class="block text-green-600 font-semibold hover:underline">&gt; Geral</a>
-                            
                             <hr class="border-gray-100 my-2">
-                            
                             <div class="text-gray-400 font-bold uppercase tracking-wider text-[10px]">Tabelas e configurações adicionais</div>
                             <a href="#" class="block text-green-600 font-semibold hover:underline">&gt; Alterar dados da empresa</a>
                         </div>
