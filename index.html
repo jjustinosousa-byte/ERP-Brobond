@@ -37,73 +37,113 @@
             
             <nav class="hidden md:flex space-x-1 text-sm font-medium text-blue-100 relative">
                 
-                <!-- 1. Meu Negócio -->
+                <!-- 1. MEU NEGÓCIOS -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-meu-negocio')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
-                        <span>Meu Negócio</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
+                        <span>MEU NEGÓCIOS</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-meu-negocio" class="dropdown-menu hidden absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-xl py-2 z-50 text-xs text-gray-700">
-                        <div class="px-4 py-1 font-bold text-gray-400 uppercase tracking-wider text-[10px]">Visão Geral</div>
-                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Painel de Operações</a>
-                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Indicadores de E-commerce</a>
+                    <div id="drop-meu-negocio" class="dropdown-menu hidden absolute left-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-xl py-2 z-50 text-xs text-gray-700">
+                        <div class="px-4 py-1 font-bold text-gray-400 uppercase tracking-wider text-[10px]">Dashboard Geral</div>
+                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Dashboard Vendas & Canais</a>
+                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Dashboard Margem por Pedido</a>
+                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Dashboard Produtos & Clientes</a>
+                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Curva ABC (Produtos e Clientes)</a>
+                        <a href="#" onclick="showScreen('screen-dashboard')" class="block px-4 py-2 hover:bg-gray-100">Metas Comerciais</a>
                     </div>
                 </div>
 
-                <!-- 2. Cadastros (Mapeamento Oficial Brobond) -->
+                <!-- 2. CADASTROS -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-cadastros')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
-                        <span>Cadastros</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
+                        <span>CADASTROS</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-cadastros" class="dropdown-menu hidden absolute left-0 mt-2 w-96 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700 grid grid-cols-2 gap-4">
+                    <div id="drop-cadastros" class="dropdown-menu hidden absolute left-0 mt-2 w-[500px] bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700 grid grid-cols-2 gap-4">
                         <div>
-                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Catálogo</div>
-                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Produtos & Variações (WooCommerce)</a>
-                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Clientes & Parceiros</a>
+                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Cadastros</div>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Produtos</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Clientes</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Fornecedores</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Vendedores / Funcionários</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Contas Financeiras</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Categorias Financeiras</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Formas de Pagamento</a>
                         </div>
                         <div>
-                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Tabelas</div>
-                            <a href="#" class="block py-1.5 hover:text-blue-600">Preços & Atacado</a>
-                            <a href="#" class="block py-1.5 hover:text-blue-600">Categorias de Vestuário</a>
+                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Ferramentas de Cadastros</div>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Categorias de Produtos</a>
+                            <a href="#" onclick="showScreen('screen-cadastros')" class="block py-1.5 hover:text-blue-600">Lista de Preços</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. Vendas (Mapeamento Oficial Brobond) -->
+                <!-- 3. VENDAS -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-vendas')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
-                        <span>Vendas</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
+                        <span>VENDAS</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-vendas" class="dropdown-menu hidden absolute left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700">
-                        <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Operacional Vendas</div>
-                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600">Pedidos de Venda</a>
-                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600">Notas Fiscais (SEFAZ)</a>
-                        <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600">Integração Lojas Virtuais</a>
+                    <div id="drop-vendas" class="dropdown-menu hidden absolute left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700 space-y-3">
+                        <div>
+                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Gestão de Vendas</div>
+                            <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600 pl-2">Pedidos de Vendas</a>
+                            <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600 pl-2">Notas Fiscais de Saída</a>
+                            <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600 pl-2">Frente de Caixa (PDV)</a>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2">
+                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Logística e Expedição</div>
+                            <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600 pl-2">Cálculo de Frete e Etiquetas</a>
+                            <a href="#" onclick="showScreen('screen-vendas')" class="block py-1.5 hover:text-blue-600 pl-2">Checkout de Pedidos / Logística Reversa</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 4. Estoque (Mapeamento Oficial Brobond) -->
+                <!-- 4. ESTOQUE & SUPRIMENTOS -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-estoque')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
-                        <span>Estoque</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
+                        <span>ESTOQUE & SUPRIMENTOS</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-estoque" class="dropdown-menu hidden absolute left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700">
-                        <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Controle de Materiais</div>
-                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 hover:text-blue-600">Saldos & Grades de Produtos</a>
-                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 hover:text-blue-600">Entrada via XML de Fornecedores</a>
-                        <a href="#" onclick="showScreen('screen-estoque')" class="block py-1.5 hover:text-blue-600">Sincronização Multi-armazém</a>
+                    <div id="drop-estoque" class="dropdown-menu hidden absolute left-0 mt-2 w-96 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700 grid grid-cols-2 gap-4">
+                        <div>
+                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Compras</div>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Pedidos de Compra</a>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Notas Fiscais de Entrada</a>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Fornecedores</a>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Sugestão de Compra</a>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Histórico de Vendas</a>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Check-in de Recebimentos</a>
+                        </div>
+                        <div>
+                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Estoque</div>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Lançamentos e Inventários</a>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Lançamentos de Estoque</a>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Ordens de Produção</a>
+                            <a href="#" onclick="showScreen('screen-estoque')" class="block py-1 hover:text-blue-600">Depósitos Múltiplos</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 5. Financeiro (Mapeamento Oficial Brobond) -->
+                <!-- 5. FINANCEIRO -->
                 <div class="relative">
                     <button onclick="toggleDropdown(event, 'drop-financeiro')" class="px-3 py-2 rounded hover:bg-blue-700 flex items-center space-x-1">
-                        <span>Financeiro</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
+                        <span>FINANCEIRO</span> <i class="fa-solid fa-chevron-down text-xs text-blue-300"></i>
                     </button>
-                    <div id="drop-financeiro" class="dropdown-menu hidden absolute left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700">
-                        <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Gestão Financeira</div>
-                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 hover:text-blue-600">Contas a Pagar / Receber</a>
-                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 hover:text-blue-600">Fluxo de Caixa</a>
-                        <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1.5 hover:text-blue-600">Gateway Pix / Pagamentos</a>
+                    <div id="drop-financeiro" class="dropdown-menu hidden absolute left-0 mt-2 w-96 bg-white border border-gray-200 rounded-lg shadow-xl p-4 z-50 text-xs text-gray-700 space-y-3">
+                        <div>
+                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Gestão Financeira</div>
+                            <div class="grid grid-cols-2 gap-x-2">
+                                <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600">Caixas e Bancos</a>
+                                <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600">Contas a Pagar</a>
+                                <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600">Contas a Receber</a>
+                                <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600">Ficha Financeira</a>
+                                <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600 col-span-2">Módulo de Pagamentos e Recebimentos Agnóstico</a>
+                                <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600">Remessa e Retorno Bancário</a>
+                                <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600">Comissões de Vendedores</a>
+                                <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600 col-span-2">Controle de Caixa Diário</a>
+                            </div>
+                        </div>
+                        <div class="border-t border-gray-100 pt-2">
+                            <div class="font-bold text-gray-400 uppercase tracking-wider text-[10px] mb-1">Tributos e Contabilidade</div>
+                            <a href="#" onclick="showScreen('screen-financeiro')" class="block py-1 hover:text-blue-600">Espaço Meu Contador</a>
+                        </div>
                     </div>
                 </div>
 
